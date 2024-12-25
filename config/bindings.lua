@@ -181,6 +181,7 @@ local keys = {
   { key = 'j',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Down') },
   { key = 'h',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Left') },
   { key = 'l',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Right') },
+  -- panes: switch positions
   {
     key = 'p',
     mods = mod.SUPER_REV,
