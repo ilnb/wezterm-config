@@ -1,7 +1,7 @@
-local wezterm = require('wezterm')
-local launch_menu = require('config.launch').launch_menu
-local domains = require('config.domains')
-local Cells = require('utils.cells')
+local wezterm = require 'wezterm'
+local launch_menu = require 'config.launch'.launch_menu
+local domains = require 'config.domains'
+local Cells = require 'utils.cells'
 
 local nf = wezterm.nerdfonts
 local act = wezterm.action
@@ -37,7 +37,7 @@ local function build_choices()
 
     table.insert(choices, {
       id = tostring(idx),
-      label = wezterm.format(cells:render({ 'icon_default', 'label_text' })),
+      label = wezterm.format(cells:render { 'icon_default', 'label_text' }),
     })
     table.insert(choices_data, {
       args = v.args,
@@ -52,7 +52,7 @@ local function build_choices()
 
     table.insert(choices, {
       id = tostring(idx),
-      label = wezterm.format(cells:render({ 'icon_wsl', 'label_text' })),
+      label = wezterm.format(cells:render { 'icon_wsl', 'label_text' }),
     })
     table.insert(choices_data, {
       domain = { DomainName = v.name },
@@ -65,7 +65,7 @@ local function build_choices()
     cells:update_segment_text('label_text', v.name)
     table.insert(choices, {
       id = tostring(idx),
-      label = wezterm.format(cells:render({ 'icon_ssh', 'label_text' })),
+      label = wezterm.format(cells:render { 'icon_ssh', 'label_text' }),
     })
     table.insert(choices_data, {
       domain = { DomainName = v.name },
@@ -78,7 +78,7 @@ local function build_choices()
     cells:update_segment_text('label_text', v.name)
     table.insert(choices, {
       id = tostring(idx),
-      label = wezterm.format(cells:render({ 'icon_unix', 'label_text' })),
+      label = wezterm.format(cells:render { 'icon_unix', 'label_text' }),
     })
     table.insert(choices_data, {
       domain = { DomainName = v.name },

@@ -1,4 +1,4 @@
-local wezterm = require('wezterm')
+local wezterm = require 'wezterm'
 
 ---@class Config
 ---@field options table

@@ -2,8 +2,8 @@
 -- Inspired by https://github.com/wez/wezterm/discussions/628#discussioncomment-1874614 --
 ------------------------------------------------------------------------------------------
 
-local wezterm = require('wezterm')
-local Cells = require('utils.cells')
+local wezterm = require 'wezterm'
+local Cells = require 'utils.cells'
 
 local nf = wezterm.nerdfonts
 local attr = Cells.attr

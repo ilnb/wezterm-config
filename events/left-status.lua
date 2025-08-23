@@ -1,5 +1,5 @@
-local wezterm = require('wezterm')
-local Cells = require('utils.cells')
+local wezterm = require 'wezterm'
+local Cells = require 'utils.cells'
 
 local nf = wezterm.nerdfonts
 local attr = Cells.attr
@@ -20,10 +20,10 @@ local colors = {
 local cells = Cells:new()
 
 cells
-    :add_segment(1, GLYPH_SEMI_CIRCLE_LEFT, colors.scircle, attr(attr.intensity('Bold')))
-    :add_segment(2, ' ', colors.default, attr(attr.intensity('Bold')))
-    :add_segment(3, ' ', colors.default, attr(attr.intensity('Bold')))
-    :add_segment(4, GLYPH_SEMI_CIRCLE_RIGHT, colors.scircle, attr(attr.intensity('Bold')))
+    :add_segment(1, GLYPH_SEMI_CIRCLE_LEFT, colors.scircle, attr(attr.intensity 'Bold'))
+    :add_segment(2, ' ', colors.default, attr(attr.intensity 'Bold'))
+    :add_segment(3, ' ', colors.default, attr(attr.intensity 'Bold'))
+    :add_segment(4, GLYPH_SEMI_CIRCLE_RIGHT, colors.scircle, attr(attr.intensity 'Bold'))
 
 M.setup = function()
   wezterm.on('update-right-status', function(window, _pane)

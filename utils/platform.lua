@@ -1,4 +1,4 @@
-local wezterm = require('wezterm')
+local wezterm = require 'wezterm'
 
 local function is_found(str, pattern)
   return string.find(str, pattern) ~= nil
@@ -20,7 +20,7 @@ local function platform()
   elseif is_mac then
     os = 'mac'
   else
-    error('Unknown platform')
+    error 'Unknown platform'
   end
 
   return {

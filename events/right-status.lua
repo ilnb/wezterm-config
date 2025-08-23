@@ -1,6 +1,6 @@
-local wezterm = require('wezterm')
-local umath = require('utils.math')
-local Cells = require('utils.cells')
+local wezterm = require 'wezterm'
+local umath = require 'utils.math'
+local Cells = require 'utils.cells'
 
 local nf = wezterm.nerdfonts
 local attr = Cells.attr
@@ -52,11 +52,11 @@ local colors = {
 local cells = Cells:new()
 
 cells
-    :add_segment('date_icon', ICON_DATE .. '  ', colors.date, attr(attr.intensity('Bold')))
-    :add_segment('date_text', '', colors.date, attr(attr.intensity('Bold')))
+    :add_segment('date_icon', ICON_DATE .. '  ', colors.date, attr(attr.intensity 'Bold'))
+    :add_segment('date_text', '', colors.date, attr(attr.intensity 'Bold'))
     :add_segment('separator', ' ' .. ICON_SEPARATOR .. '  ', colors.separator)
     :add_segment('battery_icon', '', colors.battery)
-    :add_segment('battery_text', '', colors.battery, attr(attr.intensity('Bold')))
+    :add_segment('battery_text', '', colors.battery, attr(attr.intensity 'Bold'))
 
 ---@return string, string
 local function battery_info()
@@ -98,7 +98,7 @@ M.setup = function(opts)
 
     window:set_right_status(
       wezterm.format(
-        cells:render({ 'date_icon', 'date_text', 'separator', 'battery_icon', 'battery_text' })
+        cells:render { 'date_icon', 'date_text', 'separator', 'battery_icon', 'battery_text' }
       )
     )
   end)
