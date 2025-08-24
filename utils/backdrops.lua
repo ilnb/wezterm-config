@@ -113,6 +113,7 @@ function BackDrops:initial_options(focus_on)
   assert(type(focus_on) == 'boolean', 'BackDrops:initial_options - Expected a boolean')
 
   self.focus_on = focus_on
+  self.current_idx = 1
   if focus_on then
     return self:_create_focus_opts()
   end
@@ -125,10 +126,10 @@ end
 ---@param window any WezTerm Window see: https://wezfurlong.org/wezterm/config/lua/window/index.html
 ---@param background_opts table background option
 function BackDrops:_set_opt(window, background_opts)
-  window:set_config_overrides({
+  window:set_config_overrides {
     background = background_opts,
     enable_tab_bar = window:effective_config().enable_tab_bar,
-  })
+  }
 end
 
 ---Override the current window options for background with focus color

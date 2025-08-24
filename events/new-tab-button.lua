@@ -99,7 +99,7 @@ M.setup = function()
 
     if default_action and button == 'Right' then
       window:perform_action(
-        act.InputSelector({
+        act.InputSelector {
           title = 'InputSelector: Launch Menu',
           choices = choices,
           fuzzy = true,
@@ -116,7 +116,7 @@ M.setup = function()
               )
             end
           end),
-        }),
+        },
         pane
       )
     end

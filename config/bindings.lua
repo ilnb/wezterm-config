@@ -132,7 +132,7 @@ local keys = {
   {
     key = [[/]],
     mods = mod.SUPER_REV,
-    action = act.InputSelector({
+    action = act.InputSelector {
       title = 'InputSelector: Select Background',
       choices = backdrops:choices(),
       fuzzy = true,
@@ -144,7 +144,7 @@ local keys = {
         ---@diagnostic disable-next-line: param-type-mismatch
         backdrops:set_img(window, tonumber(idx))
       end),
-    }),
+    },
   },
   {
     key = 'b',
@@ -203,10 +203,10 @@ local keys = {
   {
     key = 'p',
     mods = 'LEADER',
-    action = act.ActivateKeyTable({
+    action = act.ActivateKeyTable {
       name = 'resize_pane',
       one_shot = false,
-    }),
+    },
   },
 }
 

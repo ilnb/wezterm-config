@@ -14,13 +14,13 @@ return {
   -- animation_fps = 144,
   -- cursor_blink_ease_in = 'EaseOut',
   -- cursor_blink_ease_out = 'EaseOut',
-  --cursor_blink_rate = 0,
+  cursor_blink_rate = 0,
 
   -- color scheme
   colors = colors,
 
   -- background
-  --background = backdrops:initial_options(false), -- set to true if you want wezterm to start on focus mode
+  background = backdrops:initial_options(false), -- set to true if you want wezterm to start on focus mode
   window_background_opacity = 0.75,
 
   -- scrollbar

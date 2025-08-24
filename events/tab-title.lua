@@ -270,12 +270,12 @@ M.setup = function(opts)
   -- Tab name will remain locked until the `reset-tab-title` is triggered
   wezterm.on('tabs.manual-update-tab-title', function(window, pane)
     window:perform_action(
-      wezterm.action.PromptInputLine({
-        description = wezterm.format({
+      wezterm.action.PromptInputLine {
+        description = wezterm.format {
           { Foreground = { Color = '#FFFFFF' } },
           { Attribute = { Intensity = 'Bold' } },
           { Text = 'Enter new name for tab' },
-        }),
+        },
         action = wezterm.action_callback(function(_window, _pane, line)
           if line ~= nil then
             local tab = window:active_tab()
@@ -283,7 +283,7 @@ M.setup = function(opts)
             tab_list[id]:update_and_lock_title(line)
           end
         end),
-      }),
+      },
       pane
     )
   end)
@@ -300,10 +300,10 @@ M.setup = function(opts)
   -- Event listener to manually update the tab name
   wezterm.on('tabs.toggle-tab-bar', function(window, _pane)
     local effective_config = window:effective_config()
-    window:set_config_overrides({
+    window:set_config_overrides {
       enable_tab_bar = not effective_config.enable_tab_bar,
       background = effective_config.background,
-    })
+    }
   end)
 
   -- BUILTIN EVENT
