@@ -52,7 +52,6 @@ local SETUP_OPTS = {
 }
 
 ---@type table<string, Cells.SegmentColors>
--- stylua: ignore
 local colors = {
   text_default          = { bg = '#45475A', fg = '#1C1B19' },
   text_hover            = { bg = '#587D8C', fg = '#1C1B19' },

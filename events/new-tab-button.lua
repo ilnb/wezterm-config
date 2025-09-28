@@ -10,7 +10,6 @@ local attr = Cells.attr
 local M = {}
 
 ---@type table<string, Cells.SegmentColors>
--- stylua: ignore
 local colors = {
   label_text   = { fg = '#CDD6F4' },
   icon_default = { fg = '#89B4FA' },

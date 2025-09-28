@@ -176,6 +176,7 @@ local keys = {
   { key = 'j',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection 'Down' },
   { key = 'h',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection 'Left' },
   { key = 'l',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection 'Right' },
+
   -- panes: switch positions
   {
     key = 'p',
@@ -199,6 +200,7 @@ local keys = {
       one_shot = false,
     },
   },
+
   -- resize panes
   {
     key = 'p',
@@ -210,7 +212,6 @@ local keys = {
   },
 }
 
--- stylua: ignore
 local key_tables = {
   resize_font = {
     { key = 'k',      action = act.IncreaseFontSize },

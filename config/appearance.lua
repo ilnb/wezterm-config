@@ -24,7 +24,7 @@ return {
   window_background_opacity = 0.75,
 
   -- scrollbar
-  enable_scroll_bar = true,
+  enable_scroll_bar = false,
 
   -- tab bar
   enable_tab_bar = true,
@@ -35,6 +35,7 @@ return {
   switch_to_last_active_tab_when_closing_tab = true,
 
   -- window
+  enable_wayland = false,
   window_padding = {
     left = 5,
     right = 0,
