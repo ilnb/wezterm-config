@@ -2,6 +2,13 @@ local gpu_adapters = require 'utils.gpu_adapter'
 local backdrops = require 'utils.backdrops'
 local colors = require 'colors.custom'
 
+local bg = backdrops:initial_options(false) -- set to true if you want wezterm to start on focus mode
+bg = nil
+
+local opacity = function()
+  return bg and 0.75 or 0.85
+end
+
 return {
   max_fps = 144,
   -- front_end = 'WebGpu',
@@ -20,8 +27,8 @@ return {
   colors = colors,
 
   -- background
-  background = backdrops:initial_options(false), -- set to true if you want wezterm to start on focus mode
-  window_background_opacity = 0.75,
+  background = bg,
+  window_background_opacity = opacity(),
 
   -- scrollbar
   enable_scroll_bar = false,
