@@ -113,7 +113,7 @@ function BackDrops:initial_options(focus_on)
   assert(type(focus_on) == 'boolean', 'BackDrops:initial_options - Expected a boolean')
 
   self.focus_on = focus_on
-  self.current_idx = 1
+  self.current_idx = 1 -- use the first image
   if focus_on then
     return self:_create_focus_opts()
   end
