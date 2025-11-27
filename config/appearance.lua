@@ -3,22 +3,24 @@ local backdrops = require 'utils.backdrops'
 local colors = require 'colors.custom'
 
 local bg = backdrops:initial_options(false) -- set to true if you want wezterm to start on focus mode
-bg = nil
+-- bg = nil
 
 local opacity = function()
   return bg and 0.75 or 0.85
 end
 
 return {
-  max_fps = 144,
-  -- front_end = 'WebGpu',
-  -- webgpu_power_preference = 'LowPower',
+  -- max_fps = 144,
+  max_fps = 60,
+  front_end = 'WebGpu',
+  webgpu_power_preference = 'LowPower',
   -- webgpu_preferred_adapter = gpu_adapters:pick_best(),
   -- webgpu_preferred_adapter = gpu_adapters:pick_manual('Dx12', 'IntegratedGpu'),
   -- webgpu_preferred_adapter = gpu_adapters:pick_manual('Gl', 'Other'),
 
   -- cursor
   -- animation_fps = 144,
+  animation_fps = 60,
   -- cursor_blink_ease_in = 'EaseOut',
   -- cursor_blink_ease_out = 'EaseOut',
   cursor_blink_rate = 0,
