@@ -52,6 +52,7 @@ local kanagawa = {
   cursor_bg = '#C8C093',
   cursor_fg = '#C8C093',
   cursor_border = '#C8C093',
+  compose_cursor = mocha.flamingo,
 
   selection_fg = '#C8C093',
   selection_bg = '#2D4F67',
@@ -126,4 +127,65 @@ local colorscheme = {
   compose_cursor = mocha.flamingo,
 }
 
-return kanagawa
+-- Reads scheme file into a k → hex map
+---@param scheme_file string
+local function load_scheme(scheme_file)
+  local f = io.open(scheme_file, "r")
+  if not f then return nil end
+
+  local map = {}
+  for line in f:lines() do
+    local key, val = line:match("%$(%w+)%s*=%s*(%x+)")
+    if key and val then
+      map[key] = "#" .. val
+    end
+  end
+  f:close()
+  return map
+end
+
+
+local function get_colors()
+  local path = os.getenv 'HOME' .. '/.config/hypr/scheme/current.conf'
+  local m = load_scheme(path)
+  if not m then
+    return kanagawa
+  end
+
+  local colors = {
+    ansi = {
+      m.term0, m.term1, m.term2, m.term3,
+      m.term4, m.term5, m.term6, m.term7,
+    },
+    brights = {
+      m.term8, m.term9, m.term10, m.term11,
+      m.term12, m.term13, m.term14, m.term15,
+    },
+
+    foreground = m.text or m.onSurface or kanagawa.foreground,
+    background = m.base or m.background or kanagawa.background,
+
+    cursor_bg = m.subtext1 or m.onSurfaceVariant or kanagawa.cursor_bg,
+    cursor_fg = m.base or kanagawa.cursor_fg,
+    cursor_border = m.subtext1 or m.onSurfaceVariant or kanagawa.cursor_border,
+
+    selection_bg = m.surface2 or m.surfaceContainerHigh or kanagawa.selection_bg,
+    selection_fg = m.text or m.onSurface or kanagawa.selection_fg,
+
+    scrollbar_thumb = m.surface1 or kanagawa.scrollbar_thumb,
+    split = m.surface0 or kanagawa.split,
+
+    compose_cursor = m.flamingo or m.pink or kanagawa.compose_cursor,
+
+    indexed = {
+      [16] = '#ffa066',
+      [17] = '#ff5d62',
+    },
+
+    tab_bar = kanagawa.tab_bar,
+  }
+
+  return colors
+end
+
+return { qs = get_colors(), fallback = kanagawa }
