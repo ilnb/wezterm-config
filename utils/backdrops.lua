@@ -1,5 +1,5 @@
 local wezterm = require 'wezterm'
-local colors = require 'colors.custom'
+local colors = require 'colors.custom'[require 'utils.qs' and 'qs' or 'fallback']
 
 -- Seeding random numbers before generating for use
 -- Known issue with lua math library
