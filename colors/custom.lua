@@ -135,9 +135,9 @@ local function load_scheme(scheme_file)
 
   local map = {}
   for line in f:lines() do
-    local key, val = line:match("%$(%w+)%s*=%s*(%x+)")
-    if key and val then
-      map[key] = "#" .. val
+    local k, v = line:match "%$(%w+)%s*=%s*(%x+)"
+    if k and v then
+      map[k] = "#" .. v
     end
   end
   f:close()
@@ -148,9 +148,7 @@ end
 local function get_colors()
   local path = os.getenv 'HOME' .. '/.config/hypr/scheme/current.conf'
   local m = load_scheme(path)
-  if not m then
-    return kanagawa
-  end
+  if not m then return kanagawa end
 
   local colors = {
     ansi = {
@@ -188,4 +186,4 @@ local function get_colors()
   return colors
 end
 
-return { qs = get_colors(), fallback = kanagawa }
+return { qs = require 'utils.qs' and get_colors(), fallback = kanagawa }
