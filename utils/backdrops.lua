@@ -43,7 +43,7 @@ end
 ---@param path string directory of background images
 function BackDrops:set_images_dir(path)
   self.images_dir = path
-  if not path:match('/$') then
+  if not path:match '/$' then
     self.images_dir = path .. '/'
   end
   return self
