@@ -1,3 +1,4 @@
+---@type Wezterm
 local wezterm = require 'wezterm'
 local platform = require 'utils.platform'
 local backdrops = require 'utils.backdrops'
@@ -13,6 +14,7 @@ elseif platform.is_win or platform.is_linux then
   mod.SUPER_REV = 'ALT|CTRL'
 end
 
+---@type Key[]
 local keys = {
   -- misc/useful --
   { key = 'F1', mods = 'NONE', action = 'ActivateCopyMode' },
@@ -30,7 +32,7 @@ local keys = {
   {
     key = 'u',
     mods = mod.SUPER_REV,
-    action = wezterm.action.QuickSelectArgs {
+    action = act.QuickSelectArgs {
       label = 'open url',
       patterns = {
         '\\((https?://\\S+)\\)',
@@ -239,9 +241,9 @@ local mouse_bindings = {
   },
 }
 
+---@type Config
 return {
   disable_default_key_bindings = true,
-  -- disable_default_mouse_bindings = true,
   leader = { key = 'Space', mods = mod.SUPER_REV, timemout_miliseconds = 3000 },
   keys = keys,
   key_tables = key_tables,

@@ -2,6 +2,7 @@
 -- Inspired by https://github.com/wez/wezterm/discussions/628#discussioncomment-1874614 --
 ------------------------------------------------------------------------------------------
 
+---@type Wezterm
 local wezterm = require 'wezterm'
 local Cells = require 'utils.cells'
 

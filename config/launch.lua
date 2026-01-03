@@ -1,8 +1,7 @@
 local platform = require 'utils.platform'
 
+---@type Config
 local options = {
-  default_prog = {},
-  launch_menu = {},
   initial_rows = 30,
   initial_cols = 93,
 }

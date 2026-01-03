@@ -9,9 +9,10 @@ local opacity = function()
   return bg and 0.75 or 0.85
 end
 
+---@type Config
 return {
   -- max_fps = 144,
-  max_fps = 60,
+  -- max_fps = 60,
   front_end = 'WebGpu',
   webgpu_power_preference = 'LowPower',
   -- webgpu_preferred_adapter = gpu_adapters:pick_best(),
@@ -20,7 +21,7 @@ return {
 
   -- cursor
   -- animation_fps = 144,
-  animation_fps = 60,
+  -- animation_fps = 60,
   -- cursor_blink_ease_in = 'EaseOut',
   -- cursor_blink_ease_out = 'EaseOut',
   cursor_blink_rate = 0,
@@ -44,7 +45,7 @@ return {
   switch_to_last_active_tab_when_closing_tab = true,
 
   -- window
-  enable_wayland = false,
+  enable_wayland = true,
   window_padding = {
     left = 5,
     right = 0,

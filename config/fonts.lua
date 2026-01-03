@@ -1,10 +1,15 @@
+---@type Wezterm
 local wezterm = require 'wezterm'
 local platform = require 'utils.platform'
 
 -- local font = 'Maple Mono SC NF'
 local font_family = 'JetBrainsMono Nerd Font'
 local font_size = 13
+if require 'config.appearance'.enable_wayland then
+  font_size = font_size - 4
+end
 
+---@type Config
 return {
   font = wezterm.font {
     family = font_family,

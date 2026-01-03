@@ -1,3 +1,4 @@
+---@type Wezterm
 local wezterm = require 'wezterm'
 local umath = require 'utils.math'
 local Cells = require 'utils.cells'
