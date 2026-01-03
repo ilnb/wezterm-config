@@ -90,7 +90,7 @@ local function create_title(process_name, base_title, max_width, inset)
     inset = inset - 2
   end
 
-  if base_title:match('^InputSelector:') ~= nil then
+  if base_title:match '^InputSelector:' ~= nil then
     title = base_title:gsub('InputSelector:', GLYPH_SEARCH)
     inset = inset - 2
   end
@@ -159,9 +159,9 @@ end
 function Tab:set_info(active_pane, panes, is_active, max_width)
   local process_name = clean_process_name(active_pane.foreground_process_name)
 
-  self.is_wsl = process_name:match('^wsl') ~= nil
+  self.is_wsl = process_name:match '^wsl' ~= nil
   self.is_admin = (
-    active_pane.title:match('^Administrator: ') or active_pane.title:match('(Admin)')
+    active_pane.title:match '^Administrator: ' or active_pane.title:match '(Admin)'
   ) ~= nil
   self.unseen_output = false
   self.unseen_output_count = 0

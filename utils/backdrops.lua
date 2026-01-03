@@ -113,7 +113,7 @@ function BackDrops:initial_options(focus_on)
   assert(type(focus_on) == 'boolean', 'BackDrops:initial_options - Expected a boolean')
 
   self.focus_on = focus_on
-  self.current_idx = 1 -- use the first image
+  self.current_idx = 5 -- which image
   if focus_on then
     return self:_create_focus_opts()
   end
@@ -159,7 +159,7 @@ function BackDrops:choices()
   for idx, file in ipairs(self.images) do
     table.insert(choices, {
       id = tostring(idx),
-      label = file:match('([^/]+)$'),
+      label = file:match '([^/]+)$',
     })
   end
   return choices
