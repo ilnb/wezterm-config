@@ -16,7 +16,7 @@ return {
   front_end = 'WebGpu',
   webgpu_power_preference = 'LowPower',
   -- webgpu_preferred_adapter = gpu_adapters:pick_best(),
-  -- webgpu_preferred_adapter = gpu_adapters:pick_manual('Dx12', 'IntegratedGpu'),
+  -- webgpu_preferred_adapter = gpu_adapters:pick_manual('Vulkan', 'IntegratedGpu'),
   -- webgpu_preferred_adapter = gpu_adapters:pick_manual('Gl', 'Other'),
 
   -- cursor

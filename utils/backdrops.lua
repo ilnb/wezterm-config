@@ -1,3 +1,4 @@
+---@type Wezterm
 local wezterm = require 'wezterm'
 local colors = require 'colors.custom'[require 'utils.qs' and 'qs' or 'fallback']
 
